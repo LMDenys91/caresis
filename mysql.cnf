@@ -1,0 +1,4 @@
+database = caresis_production
+user = root
+password = HealtHack2015
+default-character-set = utf8
