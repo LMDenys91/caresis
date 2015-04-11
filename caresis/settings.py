@@ -78,9 +78,11 @@ WSGI_APPLICATION = 'caresis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': 'mysql.cnf',
-        },
+        'NAME': 'caresis_production',
+	'USER': 'ubuntu',
+	'PASSWORD': 'HealthHack2015',
+	'HOST': '',
+	'PORT': '',
     }
 }
 
