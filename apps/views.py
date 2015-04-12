@@ -26,10 +26,10 @@ from apps.serializers import AppointmentSerializer
 @api_view(['GET', 'POST'])
 
 def appointment(request):
-    if request.method == 'GET':
-	    queryset = Appointment.objects.all()
-	    serializer = AppointmentSerializer(queryset, many=True)
-	    return Response(serializer.data)
+	if request.method == 'GET':
+		queryset = Appointment.objects.all()
+		serializer = AppointmentSerializer(queryset, many=True)
+		return Response(serializer.data)
 	return Response(status=status.HTTP_201_CREATED)
 
 
