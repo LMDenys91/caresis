@@ -5,6 +5,6 @@ from apps import views
 
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^caresis/', api.caresis, name='caresis'),
+    url(r'^appointment/', api.appointment, name='appointment'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
