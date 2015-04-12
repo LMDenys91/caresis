@@ -18,6 +18,7 @@ from rest_framework.decorators import detail_route, list_route
 # Create your views here.
 
 @api_view(['GET', 'POST'])
+
 def appointment(request):
 	return Response(status=status.HTTP_201_CREATED)
 
