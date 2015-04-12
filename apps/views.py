@@ -31,6 +31,16 @@ def appointment(request):
 		serializer = AppointmentSerializer(queryset, many=True)
 		return Response(serializer.data)
 	return Response(status=status.HTTP_201_CREATED)
+    if request.method == 'POST':
+        ap =  Appointment(
+		 	title = request.DATA.get("title"),
+		 	description = request.DATA.get("description"),
+		 	date = request.DATA.get("date"),
+			address = request.DATA.get("address")
+            )
+
+        ap.save()
+        return Response(status=status.HTTP_201_CREATED)
 
 def advocate(request):
 	if request.method == 'GET':
