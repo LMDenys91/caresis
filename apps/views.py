@@ -17,11 +17,19 @@ from rest_framework.views import APIView
 
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route, list_route
+
+from apps.models import Appointment
+from apps.serializers import AppointmentSerializer
+
 # Create your views here.
 
 @api_view(['GET', 'POST'])
 
 def appointment(request):
+    if request.method == 'GET':
+	    queryset = Appointment.objects.all()
+	    serializer = AppointmentSerializer(queryset, many=True)
+	    return Response(serializer.data)
 	return Response(status=status.HTTP_201_CREATED)
 
 
