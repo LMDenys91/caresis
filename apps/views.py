@@ -18,8 +18,8 @@ from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework.decorators import detail_route, list_route
 
-from apps.models import Appointment
-from apps.serializers import AppointmentSerializer
+from apps.models import Appointment, Advocate, Appointment, Patient, Address
+from apps.erializers import AppointmentSerializer, AdvocateSerializer, AppointmentSerializer, PatientSerializer, AddressSerializer
 
 # Create your views here.
 
@@ -29,6 +29,27 @@ def appointment(request):
 	if request.method == 'GET':
 		queryset = Appointment.objects.all()
 		serializer = AppointmentSerializer(queryset, many=True)
+		return Response(serializer.data)
+	return Response(status=status.HTTP_201_CREATED)
+
+def advocate(request):
+	if request.method == 'GET':
+		queryset = Advocate.objects.all()
+		serializer = AdvocateSerializer(queryset, many=True)
+		return Response(serializer.data)
+	return Response(status=status.HTTP_201_CREATED)
+
+def address(request):
+	if request.method == 'GET':
+		queryset = Address.objects.all()
+		serializer = AddressSerializer(queryset, many=True)
+		return Response(serializer.data)
+	return Response(status=status.HTTP_201_CREATED)
+
+def patient(request):
+	if request.method == 'GET':
+		queryset = Patient.objects.all()
+		serializer = PatientSerializer(queryset, many=True)
 		return Response(serializer.data)
 	return Response(status=status.HTTP_201_CREATED)
 
