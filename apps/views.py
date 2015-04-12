@@ -17,7 +17,8 @@ from rest_framework import viewsets
 from rest_framework.decorators import detail_route, list_route
 # Create your views here.
 
-class appointment(viewssets.ModelViewSet):
-	print 'Damn that zaf dude, amiright?'
+@api_view(['GET', 'POST'])
+def appointment(viewsets.ModelViewSet):
+	return Response("zaffy")
 
 		
