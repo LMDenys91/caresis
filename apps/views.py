@@ -36,7 +36,7 @@ def appointment(request):
 		 	title = request.DATA.get("title"),
 		 	description = request.DATA.get("description"),
 		 	date = request.DATA.get("date"),
-			address = request.DATA.get("address")
+			address = request.DATA.get("address"),
             )
 
         ap.save()
